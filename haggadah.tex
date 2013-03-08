@@ -1,0 +1,1132 @@
+\documentclass[a4paper,10pt,openany]{memoir}
+
+% Sources: song of songs, shulchan aruch,
+
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage{ucs}   % package to add unicode support
+\usepackage[utf8x]{inputenc}  % adding the UTF-8 encoding
+\usepackage{culmus}
+\usepackage[HE8,OT1]{fontenc}
+\usepackage[english,hebrew]{babel}
+\usepackage{setspace}
+
+% TODO
+\setlength{\beforechapskip}{0cm}
+%\setlength{\beforechapskip}{-6.5em}
+%\setlength{\topskip}{6.5em}
+
+\newcommand{\HgInst}[1]{{\noindent\sffamily{\bfseries{#1}}}}
+\newcommand{\HgEllipsis}{\ensuremath{\left[\ldots\right]}}
+\newcommand{\HgSource}[1]{\hfill{\small---\itshape{#1}}}
+\newcommand{\hchapter}[1]{
+  \begin{otherlanguage}{hebrew}
+    \chapter*{#1}
+  \end{otherlanguage}
+}
+\newcommand{\HgHL}[1]{{\Large\bfseries#1\par\noindent\\[-.5em]}}
+\newcommand{\HgFill}{\vfill \hrule \vfill}
+
+\newenvironment{HgEnglish}{\strut\\\noindent}{\vspace{1em}}
+\newenvironment{HgTranslit}{\strut\\\noindent\begin{itshape}}{\end{itshape}\vspace{1em}}
+\newenvironment{HgHebrew}{\begin{otherlanguage}{hebrew}\strut\\\noindent\Large
+}{\par\end{otherlanguage}\vspace{1em}}
+
+\begin{document}
+
+\selectlanguage{english}
+\aliaspagestyle{chapter}{empty}
+\pagestyle{empty}
+\strut
+\vfill
+\begin{center}
+\fontsize{23pt}{23pt}
+\selectfont
+The 
+Columbia
+Commune
+Churchill \\
+\fontsize{50pt}{50pt}
+\selectfont
+Free 
+Haggadah
+\end{center}
+\vspace{10em}
+\vfill
+
+%\chapter*{Preface to the 2013 edition}
+%
+%During my undergraduate years, the annual cobbling-together of a haggadah from
+%assorted prayer books, Maxwell House freebies and miscellaneous online snippets
+%grew into a kind of March ritual. The haggadah, once constructed and
+%wine-baptized, was invariably lost---and, in an echo of the pagan springtime
+%ceremony from which Passover likely derives, refashioned anew each year.  This
+%document is an attempt to stabilize the process (or, at the very least, to
+%minimize the amount of frantic typing I have to do after dinner goes into the
+%oven).
+%
+%Every haggadah is a palimpsest, but this one more than most. Its immediate
+%progenitor, which I refer to here as the ``Commune Haggadah'', was used in 2011
+%and 2012 (and possibly earlier?) by an eponymous collective of Columbia students
+%who identified (some ironically and some with deadly seriousness) with various
+%worldwide socialist movements. The Commune Haggadah appears to have itself been
+%substantially plagiarized from an earlier ``Socialist Haggadah'' (with the full
+%cooperation of the latter's author), about which I have been able to determine
+%only that it was prepared by a friend-of-a-friend, one Eve Goodman, from an
+%intimidating list of scholarly sources (enumerated on the back pages) between
+%the years 2003 and 2010. The lost haggadot which I prepared for my own use in
+%2010 and 2011 were rather more catholic (note the miniscule ``c''!) in the
+%themes and political leanings of their source material.
+%
+%This is not a socialist haggadah.  Though we eat reclining, the seder is
+%supposed to make us uncomfortable: our meal recalls Jews' tears and Egyptians'
+%blood; bricks and affliction; mortar and slaughter. And the ``telling'' for
+%which this book is named ought to make us uncomfortable too, no less when that
+%means avoiding easy (and, we can now safely say, demonstrably untrue) Marxist
+%accounts of history. Nevertheless the basic story of the Passover is the
+%liberation of the oppressed by overwhelming historical forces, and the basic
+%impulse of the Commune Haggadah was good. It, and its predecessors, still
+%constitute the spiritual (if no longer the textual) core of the present
+%document. I can only hope that, transplanted with its keeper, the Haggadah now
+%hold will flourish as we have in Cambridge's strange soil.
+%
+%\chapter*{Prefatory miscellany}
+%
+%\begin{itemize}
+%  \item The letter \d{h} (that's ``h-with-a-dot-under-it'') is a voiceless
+%    uvular fricative, as in the Hebrew ``hanukkah'', the Scottish ``loch'', or
+%    the sound one make while clearing one's throat of mucus.
+%
+%  \item All translations of scripture are from the 1917 JPS Version unless
+%    otherwise noted.
+%\end{itemize}
+
+\chapter*{The Passover seder}
+
+Introductory spiel goes here.
+
+\hchapter{סדר}
+
+\settowidth{\versewidth}{matzah balls in salted water or broth, because you can.}
+\PoemTitle*{Order}
+\begin{verse}[\versewidth]
+  Breakfast on kosher macaroons and Diet Pepsi\\
+  in the car on the way to Price Chopper for lamb.
+
+  Peel five pounds of onions and let the Cuisinart\\
+  shred them while you push them down and weep.
+
+  Call your mother because you know she’s preparing\\
+  too, because you want to ask again whether she cooks
+
+  matzah balls in salted water or broth, because you can.\\
+  Crumble boullion cubes like clumps of wet sand.
+
+  Remember the precise mixing order, beating \\
+  then stirring then folding, so that for one moment
+
+  you can become your grandfather. \\
+  Remember the year he taught you this trick,
+
+  not the year his wife died scant weeks before seder\\
+  and he was already befuddled when you came home.
+
+  Realize that no matter how many you buy\\
+  there are never quite enough eggs at Pesach
+
+  especially if you need twelve for the kugel \\
+  and  eighteen for the kneidlach and another dozen
+
+  to hardboil and dip in bowls of stylized tears.\\
+  Know you are free! What loss. What rejoicing.
+\end{verse}
+
+\HgSource{R. Rachel Barenblat}
+\newpage
+
+\chapter{Kadesh: Sanctification}
+\vfill
+
+\HgInst{Pour the first cup of wine, and read:}
+
+%And the evening and the morning were the sixth day. 
+%Thus the heavens and the earth were finished, and all the host of them. 
+%And on the seventh day God ended his work which he had made; 
+%And he rested on the seventh day from all his work which he had made. 
+%And God blessed the seventh day, and sanctified it: 
+%Because that in it he had rested from all his work which God created and made. 
+
+\begin{HgHebrew} 
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
+  \\
+  בּוֹרֵא פְּרִי הַגָפֶן.
+\end{HgHebrew}
+
+\begin{HgTranslit}
+  \HgHL{Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam, \\
+  borei p'ri hagafen.}
+  Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam, \\
+  asher ba\d{h}ar banu mikol am v'romemanu, mikol lashon v'kidshanu, \\
+  b'mitzvotav. \\
+  \HgEllipsis \\
+  Baru\d{h} ata Adonai, m'kadesh Yisrael v'hazmanim.
+\end{HgTranslit}
+
+\begin{HgEnglish}
+  \HgHL{Bless you, Lord our God, ruler of the universe, \\
+  Who creates the fruit of the vine.}
+  Bless you, Lord our God, ruler of the universe, \\
+  Who chose us from the throng of people and singled us out among nations \\
+  By giving us the commandments, knowledge of life and good. \\
+  You made festivals for happy times, \\
+  and appointed holidays and seasons for rejoicing. \\
+  Such is this Day of the Feast of Unleavened Bread, when we gather \\
+  To remember our going out from Egypt, and to taste our freedom. \\
+  For you chose us among all others to celebrate \\
+  Your holy festivals with joy and fervor, the marks of your love and favor. \\
+  Bless you, God of Israel, who makes holy festivals.
+
+  \HgSource{adapted from the Red Sea Haggadah}
+\end{HgEnglish}
+
+\HgInst{Drink the first cup.}
+
+\vfill
+
+\hchapter{קדש}
+
+\begin{HgEnglish}
+  \HgHL{
+  Wherefore say unto the children of Israel: I am God, and I will bring you out
+  from under the burdens of the Egyptians.}\\[-3em]
+
+  \HgSource{Exodus 6:6}\\
+
+  \noindent There are four expressions of redemption: {\itshape I will bring you
+  out}, {\itshape I will deliver you}, {\itshape I will redeem you} and
+  {\itshape I will take you}. These correspond to the four decrees which Pharaoh
+  issued regarding them. The sages accordingly ordained four cups to be drunk on
+  the eve of Passover to correspond with these four expressions, in order to
+  fulfil the verse: {\itshape I will lift up the cup of salvation and call upon
+  the name of the Lord.}
+  \HgSource{Shemot Rabbah}
+\end{HgEnglish}
+
+\HgFill
+
+\begin{HgEnglish}
+  We rededicate ourselves to liberation from tyranny: from the tyranny of
+  poverty, the tyranny of war, the tyranny of ignorance and the tyranny of hate.
+  And we light candles to shine as a beacon of liberation for our people and for
+  all people. May the light of the candles we kindle tonight bring radiance to
+  all those who live in darkness still; may this season, marking our deliverance
+  of our people from servitude to Pharaoh, rouse us against anyone who keeps
+  others in servitude; may we strive to bring about our own liberation and the
+  liberation of all people everyone.
+
+  Blessed is the spirit of freedom in whose honor we kindle the lights of this
+  holiday, Passover, the season of freedom. Blessed is the force of life that
+  brings us to this year’s spring, and to this renewal of our quest for freedom.
+
+  \HgSource{The Socialist Haggadah}
+\end{HgEnglish}
+
+\HgFill
+
+\PoemTitle*{Blessed is the match}
+\begin{verse}
+  \small
+  Blessed is the match consumed in kindling flame. \\
+  Blessed is the flame that burns in the secret fastness of the heart. \\
+  Blessed is the heart with strength to stop its beating for honor's sake. \\
+  Blessed is the match consumed in kindling flame.
+\end{verse}
+\HgSource{Hannah Szenes}
+
+\newpage
+
+\chapter{Ur\d{h}atz: Washing the hands}
+
+\vfill
+
+\HgInst{Wash your hands (without reciting a blessing).}
+
+\vfill
+
+\hchapter{ורחץ}
+\vfill
+
+We wash our hands to prepare ourselves for the Passover rituals.
+
+\HgFill
+
+\begin{verse}
+Isn’t it always the heart that wants to wash \\
+the elephant, begging the body to do it \\
+with soap and water, a ladder, hands, \\
+in tree shade big enough for the vast savannas \\
+of your sadness, the strangler fig of your guilt, \\
+the cratered full moon’s light fuelling \\
+the windy spooling memory of elephant?
+ 
+What if Father Quinn had said, “Of course you’ll recognize \\
+your parents in Heaven,” instead of \\
+“Being one with God will make your mother and father \\
+pointless.” That was back when I was young enough \\
+to love them absolutely though still fear for their place \\
+in Heaven, imagining their souls like sponges full \\
+of something resembling street water after rain.
+
+\HgEllipsis
+\end{verse}
+\HgSource{Barbara Ras, ``Washing the Elephant''}
+\vfill
+
+\chapter{Karpas: The green vegetable}
+
+\vfill
+
+\HgInst{Distribute pieces of parsely, and dip them in saltwater.}
+
+\begin{HgHebrew}
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, 
+  \\
+  בּוֹרֵא פְּרִי הָאֲדָמָה.
+\end{HgHebrew}
+
+\begin{HgTranslit}
+  \HgHL{
+  Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam, \\
+  borei p'ri ha'adamah.
+}
+\end{HgTranslit}
+\vspace{-1em}
+\begin{HgEnglish}
+  \HgHL{
+  Bless you, Lord our God, ruler of the universe, \\
+  Who creates the fruit of the earth.
+  }
+\end{HgEnglish}
+
+\HgInst{Eat the parsely.}
+
+\vfill
+
+\hchapter{כרפס}
+
+\begin{HgEnglish}
+The green vegetable represents spring, and rebirth, renewal and growth. The salt
+water represents the tears we shed when we were slaves in Egypt.
+\end{HgEnglish}
+
+\HgFill
+
+\begin{HgEnglish}
+  The passover seder as we know it, however, actually originated in late
+  antiquity, in Roman Palestine in the first centuries of the Common Era. That
+  historical context is very important because both the very structure and
+  format of the haggadah text reflects not only those conventions but also the
+  inevitable cultural changes that occurred when Jews moved from Roman Palestine
+  to other cultures in the Diaspora [\ldots]
+
+  Let me give one brief example: The passage that we know as the Four
+  Questions originally consisted of three, not four questions, and each question
+  directly addressed one of the three symbolic foods eaten at the seder---the
+  maror (which are the bitter herbs customarily eaten with \d{h}aroset) the
+  matzah, and the Passover sacrifice. As it happens, each of these three foods
+  also related to the three courses that were customarily eaten at a Greco-Roman
+  banquet.
+
+  \HgSource{Joseph Tabory, The JPS Commentary on the Haggadah}
+\end{HgEnglish}
+
+\HgFill
+
+\begin{HgEnglish}
+  Bless you, underpaid migrant farmworkers, who create the fruit of the earth.
+
+  \HgSource{adapted from the Socialist Haggadah}
+\end{HgEnglish}
+
+\HgFill
+
+\begin{verse}
+  For, lo, the winter is past, the rain is over and gone;
+
+  The flowers appear on the earth; the time of singing is come, and the voice of
+  the turtle is heard in our land;
+
+  The fig-tree putteth forth her green figs, and the vines in blossom give forth
+  their fragrance. Arise, my love, my fair one, and come away.
+\end{verse}
+\HgSource{The Song of Songs 2:11-13}
+
+\begin{HgEnglish}
+\end{HgEnglish}
+
+\chapter{Ya\d{h}atz: Breaking the matzah}
+
+\vfill
+
+\HgInst{Break the middle matzah, and set aside the larger piece as the
+afikoman. Hold the remaining matzah up, and read:}
+
+\begin{HgHebrew}
+  הָא לַחְמָא עַנְיָא דִּי אֲכָלוּ אַבְהָתָנָא
+  \\
+  בְּאַרְעָא דְמִצְרָיִם.
+  \\
+  כָּל דִּכְפִין יֵיתֵי וְיֵכוֹל,
+  \\
+  כָּל דִּצְרִיךְ יֵיתֵי וְיִפְסַח. 
+  \\
+  הָשַּׁתָּא הָכָא,
+  לְשָׁנָה הַבָּאָה בְּאַרְעָא דְיִשְׂרָאֵל.
+  \\
+  הָשַּׁתָּא עַבְדֵי,
+  לְשָׁנָה הַבָּאָה בְּנֵי חוֹרִין.
+\end{HgHebrew}
+
+\begin{HgTranslit}
+  \HgHL{
+  Hala\d{h}ma anya di a\d{h}alu avhatana \\
+  b'ara d'mitzrayim.
+}
+  Kol di\d{h}fin yeitei v'ye\d{h}ol \\
+  kol ditzri\d{h} yeitei v'yifsa\d{h}. \\
+  Hashata ha\d{h}a, \\
+  l'shanah haba'ah b'ara d'yisrael. \\
+  Hashata avdei, \\
+  l'shanah haba'ah b'nei \d{h}orin.
+\end{HgTranslit}
+
+\begin{HgEnglish}
+  \HgHL{
+  The bread of affliction that our ancestors ate \\
+  in the land of Egypt.
+  }
+  All who are hungry, come and eat; \\
+  all who are needy, come and celebrate the Passover. \\
+  Now we are here;
+  next year may we be in Israel; \\
+  now we are slaves;
+  next year may we be free.
+\end{HgEnglish}
+
+\HgInst{Pour (but not drink!) the second cup of wine.}
+
+\vfill
+
+\hchapter{יחץ}
+
+\begin{HgEnglish}
+  According to one tradition, we recite this portion in Aramaic rather than
+  Hebrew so that the angels (who can't understand Aramaic) don't take us up on
+  our offer and crash the party.
+
+  Various reasons are given for breaking the middle matzah: to remind us that
+  the task of liberation, like the matzah, is incomplete; or in commemoration of
+  the time when we were poor and hungry. Another commentary tells us that the
+  Hebrew slaves, making their way to freedom, couldn't know when their next meal
+  would come, so they would eat a small amount and hide the rest for later. 
+\end{HgEnglish}
+
+\HgFill
+
+\begin{HgEnglish}
+  It is written [Deut. xvi. 3]: ``Bread of affliction'' (le\d{h}em oni), and as
+  ``oni'' can also stand for ``proclaiming,'' the bread may be called ``bread of
+  proclamation,'' i.e., ``bread over which proclamations should be made,'' and
+  thus we have also learned [from the Oral Law]. Or ``Oni'' may still be called
+  ``poor,'' and for the reason that the benediction pertaining to the eating of
+  the unleavened bread should be made over a broken piece after the manner of
+  the poor.
+
+  \HgSource{Tractate Pesachim}
+\end{HgEnglish}
+
+\HgFill
+
+\begin{HgEnglish}
+  While there is a lower class, I am in it; while there is a criminal element, I
+  am of it; while there is a soul in prison, I am not free!
+
+  \HgSource{Eugene V. Debs}
+\end{HgEnglish}
+
+\HgFill
+
+\begin{HgEnglish}
+This invitation appears to be presented at the wrong time, for Kiddush has
+already been recited, in the wrong place, for it is issued in the privacy of our
+own homes, and in a language, Aramaic, which most people no longer understand.
+[\ldots] What purpose do these invitations serve?
+
+The Pesach Seder is a celebration of our redemption and we are all guests of
+honor. To prevent the guests from feeling beholden to [host,] which would
+inhibit their involvement and participation in the evening, we begin the Seder
+by allowing the guests to invite others. The Talmud states "a guest is not
+permitted to invite other guests". However, a guest of honor has the right to
+invite whomever he chooses. The message we are relaying to all the participants
+is they are not merely guests beholden to the homeowner. Rather, they are all
+guests of honor, celebrating their own redemption. [\ldots] The purpose of the
+invitation is for the guests already assembled, not for those who are absent.
+
+\HgSource{R. Yochanan Zwieg, ``Ha Lachma Anya''}
+\end{HgEnglish}
+
+\chapter{Magid: The Passover story \\ {\LARGE The four questions}}
+
+\vfill
+
+\HgInst{The youngest person present recites:}
+
+\begin{HgHebrew}
+מַה נִּשְּׁתַּנָה הַלַּיְלָה הַזֶּה מִכָּל הַלֵּילוֹת? 
+\\
+שֶׁבְּכָל הַלֵּילוֹת אָנוּ אוֹכְלִין חָמֵץ וּמַצָּה,
+%\\
+הַלַּיְלָה הַזֶּה כּוּלוֹ מַצָּה. 
+\\
+שֶׁבְּכָל הַלֵּילוֹת אָנוּ אוֹכְלִין שְׁאָר יְרָקוֹת,
+%\\
+הַלַּיְלָה הַזֶּה מָרוֹר. 
+\\
+שֶׁבְּכָל הַלֵּילוֹת אֵין אֶנוּ מַטְבִּילִין אֲפִילוּ פַּעַם אֶחָת, 
+%\\
+הַלַּיְלָה הַזֶּה שְׁתֵּי פְעָמִים. 
+\\
+שֶׁבְּכָל הַלֵּילוֹת אָנוּ אוֹכְלִין בֵּין יוֹשְׁבִין וּבֵין מְסֻבִּין, 
+%\\
+הַלַּיְלָה הַזֶּה כֻּלָנו מְסֻבִּין. 
+\end{HgHebrew}
+
+\begin{HgTranslit}
+  \HgHL{Ma nishtanah halailah hazeh mikol haleilot?}
+  Shebe\d{h}ol haleilot, anu o\d{h}lin \d{h}ametz umatzah, 
+  halailah hazeh kulo matzah. \\
+  Shebe\d{h}ol haleilot, anu o\d{h}lin sh'ar y'rakot, 
+  halailah hazeh maror. \\
+  Shebe\d{h}ol haleilot, ein anu matbilin afilu p'am e\d{h}ad,
+  halailah hazeh sh'tei f'amin. \\
+  Shebe\d{h}ol haleilot, anu o\d{h}lin bein yoshvin uvein m'subin,
+  halailah hazeh \\ \strut $\quad$ kulanu m'subin.
+\end{HgTranslit}
+
+\begin{HgEnglish}
+  \HgHL{Why is this night different from all other nights?}
+  On other nights, we eat leavened bread and matzah; tonight only matzah. \\
+  On other nights, we eat all kinds of herbs; tonight bitter herbs. \\
+  On other nights, we do not dip our food; tonight we dip twice. \\
+  On other nights, we eat upright or reclining; tonight we all recline. \\
+\end{HgEnglish}
+
+\HgInst{Uncover the matzah, and read:}
+
+\begin{HgEnglish}
+\HgHL{We were slaves of Pharaoh in Egypt, and our God brought us out from there
+with a mighty hand and an outstretched arm.}
+Now, if God had not brought our ancestors out from Egypt, then we, our
+children, and our children's children might still be enslaved to Pharaoh in
+Egypt.  Therefore, even if we were all wise, all understanding, all learned in
+the ways of Torah, we would still be obligated to tell the story of the Exodus.
+And indeed, everyone who dwells upon the features of the Exodus is
+praiseworthy.
+\end{HgEnglish}
+
+\vfill
+
+\hchapter{מגיד\\ {\LARGE \strut}}
+
+\vfill
+
+
+\begin{HgEnglish}
+It happened that Rabbi Eliezer, Rabbi Yehoshua, Rabbi Elazar ben Azaryah, Rabbi
+Akiva and Rabbi Tarphon were reclining [at a seder] in B'nei Berak. They were
+discussing the exodus from Egypt all that night, until their students came and
+told them: ``Masters! The time has come for reciting the morning Sh'ma!''
+
+Rabbi Eleazar ben Azariah said: I have lived to be a man of threescore years and
+ten, yet I did not understand why the story of the Exodus should be told at
+night until Ben Zoma explained it to me. He said: It is said, ``That thou mayest
+remember the day when thou camest forth out of the land of Egypt all the days of
+thy life.'' (Deuteronomy 16:3) ``The days of your life'' would have meant the
+days only, but ``all the days of your life'' includes the nights also.  The
+Sages of Israel explain it further: ``The days of your life'' refers to this
+world, while ``All the days of your life'' includes the time of the Messiah.
+
+\HgSource{Adapted from the Red Sea Haggadah and the Chabad Haggadah}
+\end{HgEnglish}
+
+\HgFill
+
+\begin{enumerate}
+  \item
+    Why do we eat the bread of our neighbors, instead of inviting them over to
+    break matzo with us and figuring out a way to give each other a place at the
+    table in a free Middle East?
+
+  \item
+    Why do we swallow the bitter herbs of ethnocentrism, ultranationalism, and
+    pharaoic fundamentalism [?]
+
+  \item
+    Why do we recline, most nights of the year, when our freedom remains
+    incomplete, so long as the "giant triplets of racism, extreme materialism,
+    and militarism" are still at large in these lands?
+
+  \item
+    Why do we dip into the fountain of forgetting more than we dip into the
+    charoset and the salt water of memory, which are meant to remind us not to
+    do unto others as has been done unto us?
+\end{enumerate}
+\HgSource{Michael Gould-Wartofsky}\\
+
+\HgFill
+
+\begin{HgEnglish}
+  The Seder is thus a giant yet intimate classroom, with the Haggada serving as
+  the subject matter, and the father as the main educator entrusted with the
+  role of engaging pupils in a discussion based on a question and answer format
+  [\ldots] in the hope of involving everyone present. Listening is passive and
+  stagnant; far better to inquire, probe and analyze our oldest Jewish festival.
+
+  \HgSource{Joe Bobker, ``The Exodus Story and its Message''}
+\end{HgEnglish}
+
+\vfill
+
+\chapter{Magid: The Passover story \\ {\LARGE The four children}}
+
+\vfill
+
+\HgHL{The Torah speaks of four kinds of children: The wise child, the wicked
+  child, the simple child, and the child who does not know how to ask.}\\
+The wise child asks: ``What is the meaning of the testimonies, laws and
+judgments which God has commanded you?''
+
+To that one, you explain all the laws of Passover, down to the very last detail
+about the Afikoman. \\[1em]
+The wicked child asks: ``What does all of this mean to you?'' (Exodus 12:26)
+
+By saying ``you,'' and not ``we'' or ``me,'' he excludes himself from the group,
+and denies God. Answer that child plainly: ``This is done because of what the
+Lord did for me when I came out of Egypt.'' (Exodus 13:8) ``For me, not for you:
+if you had been there in Egypt, you would not have been redeemed.''\\[1em]
+The simple child asks: ``What is this?'' 
+
+Answer that one: ``By strength of hand the Lord brought us out from Egypt, from
+the house of bondage.'' (Exodus 13:14)\\[1em]
+To the child who does not know how to ask, speak first, it is written: ``And
+thou shalt show thy son in that day, saying, This is done because of that which
+the Lord did unto me when I came forth out of Egypt.'' (Exodus 13:8)
+
+\vfill
+
+\hchapter{מגיד\\ {\LARGE \strut}}
+
+\chapter{Magid: The Passover story \\ {\LARGE Exile, Bondage and Deliverance}}
+
+\vfill
+
+\begin{HgEnglish}
+Go and hear what Laban the Aramaean wanted to do to our father Jacob. Pharaoh
+had issued a decree against the male children only, but Laban wanted to uproot
+everyone. As it is said: \HgHL{``A wandering Aramean was my father, and he went
+  down into Egypt, and sojourned there, few in number; and he became there a
+  nation, great, mighty, and populous. And the Egyptians dealt ill with us, and
+  afflicted us, and laid upon us hard bondage.  And we cried unto the Lord, the
+  God of our fathers, and he heard our voice, and saw our affliction, and our
+toil, and our oppression. And God brought us forth out of Egypt with a mighty
+hand, and with an outstretched arm, and with great terribleness, and with signs,
+and with wonders.}
+\end{HgEnglish}
+
+\vfill
+
+\hchapter{מגיד\\ {\LARGE \strut}}
+
+\begin{HgEnglish}
+
+\noindent
+``and he went down into Egypt'' forced by divine decree.\\
+
+\noindent
+``and sojourned there'' not to settle, but only to live there temporarily, as
+it is said: ``They said to Pharaoh, We have come to sojourn in the land, for
+there is no pasture for your servants' flocks because the hunger is severe in
+the land of Canaan; and now, please, let your servants dwell in the land of
+Goshen.''\\
+
+\noindent\HgEllipsis \\
+
+% \noindent
+% ``few in number'' as it is said: ``Your fathers went down to Egypt with seventy
+% persons, and now, the Lord, your God, has made you as numerous as the stars of
+% heaven.''\\
+% 
+% \noindent
+% ``and he became there a nation'' distinctive from the Egyptians.\\
+
+\noindent
+``great, mighty,'' as it is said: ``And the children of Israel were fruitful and
+increased abundantly, and multiplied and became very, very mighty, and the land
+became filled with them.''\\
+
+\noindent
+``and populous'' as it is said: ``I passed over you and saw you wallowing in
+your bloods, and I said to you `By your blood you shall live,' and I said to you
+`By your blood you shall live!' I caused you to thrive like the plants of the
+field, and you increased and grew and became very beautiful your bosom fashioned
+and your hair grown long, but you were naked and bare.''\\
+
+%\noindent\HgEllipsis
+
+%\noindent
+%``And the Egyptians dealt ill with us,'' as it is said: ``Come, let us act
+%cunningly with [the people] lest they multiply and, if there should be a war
+%against us, they will join our enemies, fight against us and leave the land.''\\
+%
+%``and afflicted us,'' as it is said: ``They set taskmasters over [the people of
+%Israel] to make them suffer with their burdens, and they built storage cities
+%for Pharaoh, Pitom and Ramses.''\\
+%
+%\noindent
+%``and laid upon us hard bondage,'' as it is said: ``The Egyptians made the
+%children of Israel work with rigor. And they made their lives bitter with hard
+%work, with mortar and with bricks and all manner of service in the field, all
+%their work which they made them work with rigor.'' \\[2em]
+%
+%\noindent
+%``And God brought us forth out of Egypt,'' not through an angel, not through a
+%seraph and not through a messenger. The Holy One, blessed be He, did it in His
+%glory by Himself! \HgEllipsis \\
+%
+%\noindent
+%``With a mighty hand,'' this refers to the pestilence, as it is said:
+%``Behold, the hand of the Lord will be upon your livestock in the field, upon
+%the horses, the donkeys, the camels, the herds and the flocks, a very severe
+%pestilence.'' \\
+%
+%\noindent
+%``and with an outstretched arm,'' this refers to the sword, as it is said: ``His
+%sword was drawn, in his hand, stretched out over Jerusalem.'' \\
+%
+%\noindent
+%``and with a great terribleness,'' this refers to the revelation of the Divine
+%Presence, as it is said: ``Has any God ever tried to take for himself a nation
+%from the midst of another nation, with trials, signs and wonders, with war and
+%with a strong hand and an outstretched arm, and with great manifestations, like
+%all that the Lord your God, did for you in Egypt before your eyes!'' \\
+%
+%\noindent
+%``and with signs,'' this refers to the staff, as it is said: ``Take into your
+%hand this staff with which you shall perform the signs.'' \\
+%
+%\noindent
+%``and with wonders,'' this refers to the blood, as it is said: ``And I shall
+%show wonders in heaven and on earth.
+
+\HgSource{Adapted from the Chabad Haggadah}
+\end{HgEnglish}
+
+\HgFill
+
+\begin{HgEnglish}
+  The Torah records the song we sang as we crossed the red sea. One of the
+  best-known verses begins ``{\itshape Mi \d{h}amo\d{ha} ba'elim,
+Adonai?}''---``Who is like you Lord, among all the gods?'' But the correct
+Hebrew is {\itshape kamo\d{h}a}, not {\itshape \d{h}amo\d{h}a}. It's said that
+when the Jews first came to the shore the sea didn't part, but one man entered
+the water singing. {\itshape Mi \d{h}amo\d{h}a} is the sound of him beginning to
+choke on the water; only after he was fully submerged did the sea begin to part.
+\end{HgEnglish}
+
+\HgFill
+
+\begin{HgEnglish}
+  I will sing unto God, for he has triumphed greatly. \hfill Horse \\
+  and rider he has cast into the sea. \hfill God is my strength and song, and he shall be \\
+  my deliverance. \hfill This is my God, and I will glorify him; \hfill the God \\
+  of my father, and I will exalt him. \hfill God is a man of war; God \\
+  is his name. \hfill He has thrown Pharaoh's chariots and host into the sea,
+  \hfill and sunk \\
+  his favorite captains in the Sea of Reeds.
+
+\HgSource{Deuteronomy 15:1-4}
+\end{HgEnglish}
+\chapter{Magid: The Passover story\\ {\LARGE The plagues}}
+
+\vfill
+
+\HgInst{Dip a finger in the cup, and spill a drop of wine on the plate as you
+read each plague. Don't lick your finger!}
+
+\noindent
+\begin{minipage}{.33\textwidth}
+  \vspace{-1.2em}
+  \begin{HgTranslit}
+    \begin{Spacing}{1.2}
+    Dam \\
+    Tzfardea \\
+    Kinim \\
+    Arov \\
+    Dever \\
+    Sh'\d{h}in \\
+    Barad \\
+    Arbeh \\
+    \d{H}oshe\d{h} \\
+    Ma\d{h}at b'\d{h}orot
+    \end{Spacing}
+  \end{HgTranslit}
+\end{minipage}
+\begin{minipage}{.33\textwidth}
+  \vspace{-1.2em}
+  \begin{HgEnglish}
+    \begin{Spacing}{1.2}
+      Blood \\
+      Frogs \\
+      Lice \\
+      Beasts \\
+      Pestilence \\
+      Boils \\
+      Hail \\
+      Locusts \\
+      Darkness \\
+      Death of the firstborn
+    \end{Spacing}
+  \end{HgEnglish}
+\end{minipage}
+\begin{minipage}{.32\textwidth}
+  \begin{HgHebrew}
+  דָּם 
+  \\
+  צְפֵרְדֵּעַ 
+  \\
+  כִּנִים 
+  \\
+  עָרוֹב 
+  \\
+  דֶּבֶר 
+  \\
+  שְׁחִין 
+  \\
+  בָּרד
+  \\
+  אַרְבֶּה 
+  \\
+  חשֶׁךְ 
+  \\
+  מַכַּת בְּכוֹרוֹת 
+  \end{HgHebrew}
+\end{minipage}
+
+\HgInst{Then read or sing:}
+
+\begin{HgHebrew}
+  אִלּוּ הוֹצִיאָנוּ מִמִּצְרָיִם
+  \HgEllipsis{}
+  דַּיֵּנוּ!
+  \\
+  אִלּוּ נָתַן לָנוּ אֶת הַשַּׁבָּת
+  \HgEllipsis{}
+  דַּיֵּנוּ!
+  \\
+  אִלּוּ נָתַן לָנוּ אֶת הַתּוֹרָה
+  \HgEllipsis{}
+  דַּיֵּנוּ!
+\end{HgHebrew}
+
+\begin{HgTranslit}
+  Ilu hotzianu mimitzrayim \HgEllipsis{} dayenu! \\
+  Ilu natan lanu et hashabbat \HgEllipsis{} dayenu! \\
+  Ilu natan lanu et hatorah \HgEllipsis{} dayenu!
+\end{HgTranslit}
+
+\begin{HgEnglish}
+  Had he only brought us out of Egypt, and not judged them, dayenu (it would
+  have been enough)! \\
+  Had he only judged them, and not their idols, dayenu!\\
+  Had he only destroyed their idols, and not their first-born, dayenu!\\
+  Had he only destroyed their first-born, and not given us their wealth, dayenu!\\
+  %Had he only given us their wealth, and not split the sea for us, dayenu!\\
+  %Had he only split the sea for us, and not taken us through on dry land, dayenu!\\
+  %Had he only taken us through, and not drowned our oppressors, dayenu!\\
+  \HgEllipsis\\
+  Had he only given us the sabbath, and not brought us to Mount Sinai, dayenu!\\
+  Had he only brought us to Mount Sinai, and not given us the Torah, dayenu!\\
+  Had he only given us the Torah, and not brought us into Israel, dayenu!\\
+  Had he only given us the Torah, and not built the temple for us, dayenu!
+\end{HgEnglish}
+
+\vfill
+
+\hchapter{מגיד\\ {\LARGE \strut}}
+
+\begin{HgEnglish}
+  We spill our wine so that our pleasure during the holiday is tempered in
+  remembrance of the  suffering of the Egyptians.
+\end{HgEnglish}
+
+\HgFill
+
+\begin{HgEnglish}
+  In that hour the ministering angels wished to sing before the Holy One,
+  blessed be He. But He rebuked them, saying: ``The work of my hands is drowning
+  in the sea, and you would sing hymns?''
+  
+  \HgSource{Sanhedrin 39b}
+\end{HgEnglish}
+
+\HgFill
+
+\begin{HgEnglish}
+We still have a long, long way to go before we reach the promised land of
+freedom. Yes, we have left the dusty soils of Egypt, and we have crossed a Red
+Sea that had for years been hardened by a long and piercing winter of massive
+resistance, but before we reach the majestic shores of the promised land, there
+will still be gigantic mountains of opposition ahead and prodigious hilltops of
+injustice\ldots{}let us go out with a divine dissatisfaction. \HgEllipsis
+
+Let us be dissatisfied until from every city hall, justice will roll down like
+waters, and righteousness like a mighty
+stream.
+
+Let us be dissatisfied until that day when the lion and the lamb shall lie down
+together, and every man will sit under
+his own vine and fig tree, and none shall be afraid.
+
+\HgSource{Martin Luther King, Jr.}
+\end{HgEnglish}
+
+\HgFill
+
+\begin{HgEnglish}
+Rabbi Yosi the Gallilean said: How do you know that the Egyptians were stricken
+by ten plagues in Egypt, and then were struck by fifty plagues at the sea?
+
+In Egypt it says of them, "The magicians said to Pharaoh `This is the finger of
+God.' At the sea it says, "Israel saw the great hand that the Lord laid against
+Egypt; and the people feared the L-rd, and they believed in the Lord and in His
+servant Moses."
+
+Now, how often were they smitten by `the finger'? Ten plagues!
+
+Thus you must conclude that in Egypt they were smitten by ten plagues, at the
+sea they were smitten by fifty plagues!
+
+\HgSource{The Chabad Haggadah}
+\end{HgEnglish}
+
+\chapter{Magid: The Passover story\\ {\LARGE The seder plate \& second cup}}
+\vspace{-2em}
+
+\begin{HgEnglish}
+Rabban Gamliel used to say: \HgHL{Whoever does not discuss the following three
+things on Passover has not fulfilled his duty: the passover-sacrifice, the
+matzah, and the maror.}
+\end{HgEnglish}
+
+\HgInst{Hold the shankbone, and read:}
+\begin{HgEnglish}
+  This passover lamb that our ancestors ate in the days of the temple: why did
+  they eat it?
+
+  Because the Lord passed over our ancestors' houses in Egypt, when he struck
+  the Egyptians with a plague.
+\end{HgEnglish}
+
+\HgInst{Hold the broken matzah, and read:}
+\begin{HgEnglish}
+  This matzah: why do we eat it?
+
+  Because our ancestors' dough did not have time to rise before the Lord
+  revealed himself to them, and redeemed them.
+\end{HgEnglish}
+
+\HgInst{Hold the bitter herb, and read:}
+\begin{HgEnglish}
+  This maror: why do we eat it?
+
+  Because the Egyptians made our ancestors' lives bitter with hard labor, and
+  with bricks and mortar.
+\end{HgEnglish}\\
+
+\HgInst{Then read:}
+\begin{HgEnglish}
+  \HgHL{In every generation, let each one say that he himself came out of
+  Egypt.} As it is said: ``You shall tell your child on that day, `it is because
+  of what God did for me when I left Egypt.''\\
+\end{HgEnglish}
+
+\HgInst{Finally, hold up the wine, and read:}
+
+\begin{HgHebrew} 
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
+  \\
+  בּוֹרֵא פְּרִי הַגָפֶן.
+\end{HgHebrew}
+\begin{HgTranslit}
+  Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam,
+  borei p'ri hagafen.
+\end{HgTranslit}
+\begin{HgEnglish}
+  Bless you, Lord our God, ruler of the universe,
+  who creates the fruit of the vine.
+\end{HgEnglish}
+\HgInst{Drink the second cup.}
+\vfill
+
+\hchapter{מגיד\\ {\LARGE \strut}}
+
+\chapter{Ra\d{h}tza: Washing the hands again}
+
+\vfill
+
+\HgInst{Wash your hands, and individually recite:}
+
+\begin{HgHebrew}
+בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
+\\
+אֲשֶׁר קִדְשָׁנוּ בְּמִצְוֹתָיו 
+\\
+וְצִוָּנוּ עַל נְטִילַת יָדַיִם.
+\end{HgHebrew}
+
+\begin{HgTranslit}
+  Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam, \\
+  asher kidshanu b'mitzvotav, \\
+  v'tzivanu al n'tilat yadayim.
+\end{HgTranslit}
+
+\begin{HgEnglish}
+  Bless you, Lord our God, ruler of the universe, \\
+  who sanctifies us with your commandments, \\
+  and commands us to wash our hands.
+\end{HgEnglish}
+
+\vfill
+
+\hchapter{רחצה}
+
+It is customary to refrain from conversation from now until the blessing over
+the Matzah, as if they were all spoken as a single blessing.
+
+\chapter{Motzi, Matzah: Blessing the bread}
+
+\vfill
+
+\HgInst{Hold all three pieces of matzah, and recite:}
+
+\begin{HgHebrew}
+בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם
+\\
+הַמּוֹצִיא לֶחֶם מִן הָאָרֶץ.
+\end{HgHebrew}
+
+\begin{HgTranslit}
+  Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam, \\
+  hamotzi le\d{h}em min ha'aretz.
+\end{HgTranslit}
+
+\begin{HgEnglish}
+  Bless you, Lord our God, ruler of the universe, \\
+  who brings forth bread from the earth.\\
+\end{HgEnglish}
+
+\HgInst{Break the top and middle matzah into pieces, and distribute them around
+the table. Continuing to hold only those pieces, read:}
+
+\begin{HgHebrew}
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
+  \\
+  אֲשֶׁר קִדְּשָנוּ בְּמִצְוֹתָיו
+  \\
+  וְצִוָּנוּ עַל אֲכִילַת מַצָּה.
+\end{HgHebrew}
+
+\begin{HgTranslit}
+  Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam, \\
+  asher kidshanu b'mitzvotav, \\
+  v'tzivanu al a\d{h}ilat matzah.
+\end{HgTranslit}
+
+\begin{HgEnglish}
+  Bless you, Lord our God, ruler of the universe, \\
+  who sanctifies us with your commandments, \\
+  and commands us to eat matzah.
+\end{HgEnglish}
+
+\vfill
+
+\hchapter{מוציא מצה }
+
+\chapter{Maror: Blessing the bitter herb \\
+         Korei\d{h}: Hillel's sandwich}
+\vfill
+
+\HgInst{Take a spoonful of maror. Dip it in the \d{h}aroset, but then shake the
+\d{h}aroset off. Now recite:}
+
+\begin{HgHebrew}
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, 
+  \\
+  אֲשֶׁר קִדְּשָנוּ בְּמִצְוֹתָיו וְצִוָּנוּ 
+  \\
+  עַל אֲכִילַת מָרוֹר.
+\end{HgHebrew}
+
+\begin{HgTranslit}
+  Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam, \\
+  asher kidshanu b'mitzvotav, \\
+  v'tzivanu al a\d{h}ilat matzah.
+\end{HgTranslit}
+
+\begin{HgEnglish}
+  Bless you, Lord our God, ruler of the universe, \\
+  who sanctifies us with your commandments, \\
+  and commands us to eat maror.
+\end{HgEnglish}
+
+\vfill
+
+\HgInst{Distribute the third matzah. Take a spoonful of maror and a spoonful of
+  \d{h}aroset, and place them between two pieces of matzah in a sandwich. Say:}
+
+\HgEnglish{Thus did Hillel, in the days of the Temple, combine the
+  Passover lamb, the matzah and the maror and eat them together, as it is said:
+``They shall eat it with matzah and bitter herbs.''}
+
+\vfill
+
+\HgInst{The meal is served! It is permitted to drink wine between the second and
+third cup.}
+
+\hchapter{מרור \\ כורך }
+
+
+\chapter{Shul\d{h}an Orei\d{h}: Eating}
+\vfill
+\begin{center}
+  \fontsize{50pt}{50pt}
+  \selectfont
+  The
+  meal
+\end{center}
+\vfill
+
+\hchapter{שולחן עורך}
+\vfill
+\begin{center}
+  \fontsize{50pt}{50pt}
+  \selectfont
+  is 
+  served.
+\end{center}
+\vfill
+
+\chapter{Tzafun: The afikoman}
+\chapter{Barei\d{h}: Blessing after the meal}
+\chapter{Hallel: Songs of praise}
+\chapter{Nirtzah: Conclusion}
+\end{document}
