@@ -1,19 +1,24 @@
 \documentclass[a4paper,10pt,openany]{memoir}
 
-% Sources: song of songs, shulchan aruch,
-
-\usepackage[urw-garamond]{mathdesign}
+\usepackage{xltxtra}
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+\setmainfont{EB Garamond}
+%\usepackage[urw-garamond]{mathdesign}
 %\usepackage[bitstream-charter]{mathdesign}
 %\usepackage[tpagella]{mathdesign}
-\usepackage{ucs}   % package to add unicode support
-\usepackage[utf8x]{inputenc}  % adding the UTF-8 encoding
-\usepackage{culmus}
-\usepackage[HE8,OT1]{fontenc}
-\usepackage[english,hebrew]{babel}
+%\usepackage{ucs}
+%\usepackage[utf8x]{inputenc}  % adding the UTF-8 encoding
+%\usepackage{culmus}
+%\usepackage[HE8,OT1]{fontenc}
+%\usepackage[english,hebrew]{babel}
 \usepackage{setspace}
 \usepackage{multicol}
 
-% TODO
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage[numerals=hebrew]{hebrew}
+\newfontfamily\hebrewfont[Script=Hebrew]{Shofar}
+
 \setlength{\beforechapskip}{0cm}
 %\setlength{\beforechapskip}{-6.5em}
 %\setlength{\topskip}{6.5em}
@@ -22,17 +27,34 @@
 \newcommand{\HgEllipsis}{\ensuremath{\left[\ldots\right]}}
 \newcommand{\HgSource}[1]{\hfill{\small---\itshape{#1}}}
 \newcommand{\hchapter}[1]{
-  \begin{otherlanguage}{hebrew}
-    \chapter*{#1}
-  \end{otherlanguage}
+  \begin{hebrew}
+    \begin{Spacing}{.97}
+      \newpage
+      \strut
+
+      \vspace{.15em}
+
+      \noindent\Huge #1
+
+      \vspace{1em}
+    \end{Spacing}
+  \end{hebrew}
+  %\setdefaultlanguage{hebrew}
+  %\begin{hebrew}[numerals=hebrew]
+  %  \chapter*{#1}
+  %%\chapter{Hello}
+  %\end{hebrew}
+  %  %\chapter*{#1}
+  %%\setdefaultlanguage{english}
 }
 \newcommand{\HgHL}[1]{{\Large\bfseries#1\par\noindent\\[-.5em]}}
 \newcommand{\HgFill}{\vfill \hrule \vfill}
 
 \newenvironment{HgEnglish}{\strut\\\noindent}{\vspace{1em}}
 \newenvironment{HgTranslit}{\strut\\\noindent\begin{itshape}}{\end{itshape}\vspace{1em}}
-\newenvironment{HgHebrew}{\begin{otherlanguage}{hebrew}\strut\\\noindent\Large
-}{\par\end{otherlanguage}\vspace{1em}}
+\newenvironment{HgHebrew}{\begin{hebrew}\strut\\\noindent\Large}{\end{hebrew}}
+%\newenvironment{HgHebrew}{\begin{otherlanguage}{hebrew}\strut\\\noindent\Large
+%}{\par\end{otherlanguage}\vspace{1em}}
 
 %\newcommand{\CSrc}{\textsuperscript{\upshape{[C]}}}
 \newcommand{\CSrc}{}
@@ -42,11 +64,12 @@
 
 \begin{document}
 
-\selectlanguage{english}
+%\selectlanguage{english}
 \aliaspagestyle{chapter}{empty}
 \pagestyle{empty}
 \strut
 \vfill
+
 \begin{center}
 \fontsize{22pt}{22pt}
 \selectfont
@@ -167,44 +190,44 @@ and included here for educational purposes.
 \begin{HgHebrew}
   \begin{center}
   קדש 
-  --
+  -
   ורחץ
-  --
+  -
   כרפס 
-  --
+  -
   יחץ 
-  --
+  -
   מגיד 
-  --
+  -
   רחצה 
-  --
+  -
   מוציא
-  --
+  -
   מצה 
   \\
   מרור 
-  --
+  -
   כורך 
-  --
+  -
   שולחן עורך 
-  --
+  -
   צפון
-  --
+  -
   ברך 
-  --
+  -
   הלל 
-  --
+  -
   נירצה 
   \end{center}
 \end{HgHebrew}
 \vspace{-3em}
 \begin{HgTranslit}
   \begin{center}
-  {\bfseries 
-    KADESH -- UR\d{H}ATZ -- KARPAS -- YA\d{H}ATZ \\
-    MAGID -- RA\d{H}TZA -- MOTZI -- MATZAH \\ 
-    MAROR -- KOREI\d{H} -- SHUL\d{H}AN OREI\d{H} \\
-    TZAFUN -- BAREI\d{H} -- HALLEL -- NIRTZAH}
+  {\small 
+    KADESH - UR\d{H}ATZ - KARPAS - YA\d{H}ATZ - % \\
+    MAGID - RA\d{H}TZA - MOTZI - MATZAH \\ 
+    MAROR - KOREI\d{H} - SHUL\d{H}AN OREI\d{H} - % \\
+    TZAFUN - BAREI\d{H} - HALLEL - NIRTZAH}
   \end{center}
 \end{HgTranslit}
 
@@ -247,7 +270,7 @@ and included here for educational purposes.
 \HgSource{R. Rachel Barenblat, ``Order''}
 \newpage
 
-\chapter{Kadesh: Sanctification}
+\chapter*{Kadesh: Sanctification}
 \vfill
 
 \HgInst{Pour the first cup of wine, and read:}
@@ -263,6 +286,9 @@ and included here for educational purposes.
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
   \\
   בּוֹרֵא פְּרִי הַגָפֶן.
+% ברוך אתה יי אלהינו מלך העולם 
+%  \\
+%  בורא פרי הגפן.
 \end{HgHebrew}
 
 \begin{HgTranslit}
@@ -347,7 +373,7 @@ and included here for educational purposes.
 
 \newpage
 
-\chapter{Ur\d{h}atz: Washing the hands}
+\chapter*{Ur\d{h}atz: Washing the hands}
 
 \vfill
 
@@ -384,7 +410,7 @@ of something resembling street water after rain.
 \HgSource{Barbara Ras, ``Washing the Elephant''}
 \vfill
 
-\chapter{Karpas: The green vegetable}
+\chapter*{Karpas: The green vegetable}
 
 \vfill
 
@@ -394,6 +420,10 @@ of something resembling street water after rain.
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, 
   \\
   בּוֹרֵא פְּרִי הָאֲדָמָה.
+
+%ברוך אתה יי אלהינו מלך העולם, 
+%  \\
+%  בורא פרי האדמה.
 \end{HgHebrew}
 
 \begin{HgTranslit}
@@ -465,7 +495,7 @@ water represents the tears we shed when we were slaves in Egypt.
 \begin{HgEnglish}
 \end{HgEnglish}
 
-\chapter{Ya\d{h}atz: Breaking the matzah}
+\chapter*{Ya\d{h}atz: Breaking the matzah}
 
 \vfill
 
@@ -486,6 +516,21 @@ afikoman. Hold the remaining matzah up, and read:}
   \\
   הָשַּׁתָּא עַבְדֵי,
   לְשָׁנָה הַבָּאָה בְּנֵי חוֹרִין.
+
+
+% הא לחמא עניא די אכלו אבהתנא
+%  \\
+%  בארעא דמצריִם.
+%  \\
+%  כל דכפין ייתי ויכול,
+%  \\
+%  כל דצריך ייתי ויִפסח. 
+%  \\
+%  השתא הכא,
+%  לשנה הבאה בארעא דיִשראל.
+%  \\
+%  השתא עבדי,
+%  לשנה הבאה בני חורין.
 \end{HgHebrew}
 
 \begin{HgTranslit}
@@ -495,9 +540,9 @@ afikoman. Hold the remaining matzah up, and read:}
 }
   Kol di\d{h}fin yeitei v'ye\d{h}ol \\
   kol ditzri\d{h} yeitei v'yifsa\d{h}. \\
-  Hashata ha\d{h}a, \\
+  Hashata ha\d{h}a, %\\
   l'shanah haba'ah b'ara d'yisrael. \\
-  Hashata avdei, \\
+  Hashata avdei, %\\
   l'shanah haba'ah b'nei \d{h}orin.
 \end{HgTranslit}
 
@@ -577,7 +622,7 @@ invitation is for the guests already assembled, not for those who are absent.
 \HgSource{R. Yochanan Zwieg, ``Ha Lachma Anya''}
 \end{HgEnglish}
 
-\chapter{Magid: The Passover story \\ {\LARGE The four questions}}
+\chapter*{Magid: The Passover story \\ {\LARGE The four questions}}
 
 \vfill
 
@@ -698,7 +743,7 @@ world, while ``All the days of your life'' includes the time of the Messiah.
 
 \vfill
 
-\chapter{Magid: The Passover story \\ {\LARGE The four children}}
+\chapter*{Magid: The Passover story \\ {\LARGE The four children}}
 
 \vfill
 
@@ -786,11 +831,11 @@ finally the one who does not know how to ask
 \end{HgEnglish}
 
 
-\chapter{Magid: The Passover story \\ {\LARGE Exile, Bondage and Deliverance}}
+\chapter*{Magid: The Passover story \\ {\LARGE Exile, Bondage and Deliverance}}
 
 \vfill
 
-\HgInst{If many people present don't know the story of Passover, consider
+\HgInst{If many people present don't know the full Passover story, consider
 reading the facing page instead.}
 
 \begin{HgEnglish}
@@ -1048,7 +1093,7 @@ fashioned and your hair grown long, but you were naked and bare.''\LSrc
 %choke on the water; only after he was fully submerged did the sea begin to part.
 %\end{HgEnglish}
 
-\chapter{Magid: The Passover story\\ {\LARGE The plagues}}
+\chapter*{Magid: The Passover story\\ {\LARGE The plagues}}
 
 \vfill
 
@@ -1211,7 +1256,7 @@ sea they were smitten by fifty plagues! \LSrc
 
 \end{HgEnglish}
 
-\chapter{Magid: The Passover story\\ {\LARGE The seder plate \& second cup}}
+\chapter*{Magid: The Passover story\\ {\LARGE The seder plate \& second cup}}
 \vspace{-2em}
 
 \begin{HgEnglish}
@@ -1259,10 +1304,12 @@ matzah, and the maror.}
   \\
   בּוֹרֵא פְּרִי הַגָפֶן.
 \end{HgHebrew}
+
 \begin{HgTranslit}
   Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam,
   borei p'ri hagafen.
 \end{HgTranslit}
+
 \begin{HgEnglish}
   Blessed are you, Lord our God, ruler of the universe,
   who creates the fruit of the vine.
@@ -1345,7 +1392,7 @@ matzah, and the maror.}
   \HgSource{Wikipedia}
 \end{HgEnglish}
 
-\chapter{Ra\d{h}tza: Washing the hands again}
+\chapter*{Ra\d{h}tza: Washing the hands again}
 
 \vfill
 
@@ -1355,6 +1402,7 @@ matzah, and the maror.}
 בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
 \\
 אֲשֶׁר קִדְשָׁנוּ בְּמִצְוֹתָיו 
+\phantom{וְצִוָּנוּ עַל נְטִילַת יָדַיִם.}
 \\
 וְצִוָּנוּ עַל נְטִילַת יָדַיִם.
 \end{HgHebrew}
@@ -1431,7 +1479,7 @@ rejoice}
 \HgSource{Psalm LI:4,9--10 \SSrc}
 % JPS
 
-\chapter{Motzi: Blessing the bread \\ Matzah: Blessing the matzah}
+\chapter*{Motzi: Blessing the bread \\ Matzah: Blessing the matzah}
 
 \vfill
 
@@ -1462,6 +1510,7 @@ the table. Continuing to hold only those pieces, read:}
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
   \\
   אֲשֶׁר קִדְּשָנוּ בְּמִצְוֹתָיו
+  \phantom{וְצִוָּנוּ עַל אֲכִילַת מַצָּה.}
   \\
   וְצִוָּנוּ עַל אֲכִילַת מַצָּה.
 \end{HgHebrew}
@@ -1541,7 +1590,7 @@ the table. Continuing to hold only those pieces, read:}
   \HgSource{Aish HaTorah}
 \end{HgEnglish}
 
-\chapter{Maror: Blessing the bitter herb \\
+\chapter*{Maror: Blessing the bitter herb \\
          Korei\d{h}: Hillel's sandwich}
 \vfill
 
@@ -1552,6 +1601,7 @@ the table. Continuing to hold only those pieces, read:}
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, 
   \\
   אֲשֶׁר קִדְּשָנוּ בְּמִצְוֹתָיו וְצִוָּנוּ 
+  \phantom{עַל אֲכִילַת מָרוֹר.}
   \\
   עַל אֲכִילַת מָרוֹר.
 \end{HgHebrew}
@@ -1639,7 +1689,7 @@ resistance and the possibility of liberation for all.
 \end{HgEnglish}
 
 
-\chapter{Shul\d{h}an Orei\d{h}: Eating}
+\chapter*{Shul\d{h}an Orei\d{h}: Eating}
 \vfill
 \begin{center}
   \fontsize{50pt}{50pt}
@@ -1659,7 +1709,7 @@ resistance and the possibility of liberation for all.
 \end{center}
 \vfill
 
-\chapter{Tzafun: The hidden}
+\chapter*{Tzafun: The hidden}
 
 \vfill
 
@@ -1729,11 +1779,16 @@ redemption can be revealed.
 \HgSource{R. Uziel Milevsky}
 \end{HgEnglish}
 
-\chapter{Barei\d{h}: Blessing after the meal \\ {\LARGE The Grace After Meals}}
+\chapter*{Barei\d{h}: Blessing after the meal \\ {\LARGE The Grace After Meals}}
 
 \vfill
 
-\HgInst{Pour the third cup of wine. Read:}
+\HgInst{Pour the third cup of wine.}
+
+\HgInst{(If including the Song of Ascents, pick a translation from the facing
+page.)}
+
+\HgInst{Read:}
 
 \begin{HgHebrew}
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
@@ -1777,9 +1832,6 @@ redemption can be revealed.
 \vfill
 
 \hchapter{ברך}
-
-\HgInst{If including The Song of Ascents, read before the blessing on the
-facing page. \\ Two translations:}\\
 
 \noindent
 \begin{minipage}{.47\textwidth}
@@ -1856,7 +1908,7 @@ facing page. \\ Two translations:}\\
   September 1943---six months after the uprising began. \SSrc
 \end{HgEnglish}
 
-\chapter{Barei\d{h}: Blessing after the meal \\ {\LARGE The third cup and
+\chapter*{Barei\d{h}: Blessing after the meal \\ {\LARGE The third cup and
 Elijah's cup}}
 
 \vfill
@@ -1984,7 +2036,7 @@ and sip there from his cup of wine.
 \end{HgEnglish}
 
 
-\chapter{Hallel: Songs of praise}
+\chapter*{Hallel: Songs of praise}
 
 \HgInst{Read from the facing page. Then recite:}
 
@@ -1999,6 +2051,7 @@ and sip there from his cup of wine.
   אֵל הַהוֹדָאוֹת, אֲדוֹן הַנִפְלָאוֹת, הַבּוֹחֵר בְּשִׁירֵי זִמְרָה,  \\
   מֶלֶךְ אֵל חֵי הָעוֹלָמִים. 
 \end{HgHebrew}
+
 \begin{HgTranslit}
   Yishtaba\d{h} shim\d{h}a l'ad malkeinu \\
   ha'el hamele\d{h} hagadol v'hakadosh bashamayim u'v'aretz \\
@@ -2010,6 +2063,7 @@ and sip there from his cup of wine.
   El hahoda'ot, Adon hanifla'ot, Habo\d{h}er bshirei zimrah \\
   Mele\d{h} el \d{h}ai haolamim.
 \end{HgTranslit}
+
 \begin{HgEnglish}
   Let your name be praised forever \\
   God, great King, holy in heaven and earth, \\
@@ -2023,18 +2077,24 @@ and sip there from his cup of wine.
 \end{HgEnglish}
 
 \HgInst{One more time:}
+\vspace{-1em}
+
 \begin{HgHebrew} 
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא פְּרִי הַגָפֶן.
-  \vspace{-1em}
 \end{HgHebrew}
+%\vspace{-1em}
+
 \begin{HgTranslit}
   Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam,
   borei p'ri hagafen.
 \end{HgTranslit}
+\vspace{-2em}
+
 \begin{HgEnglish}
   Blessed are you, Lord our God, ruler of the universe,
   who creates the fruit of the vine.
 \end{HgEnglish}
+\vspace{-1em}
 
 \HgInst{Drink the fourth cup.}
 
@@ -2062,7 +2122,7 @@ Still, we would not suffice \\
 \vin in thanking You, Lord God-of-us
 \HgEllipsis 
 \end{verse}
-\HgSource{Nishmat Kol \d{Hai}\footnotemark[1]}
+\HgSource{Nishmat Kol \d{H}ai\footnotemark[1]}
 
 \vspace{3em}
 
@@ -2126,7 +2186,7 @@ He fathers-forth whose beauty is past change: \\
 \HgSource{Gerard Manley Hopkins}
 \end{verse}
 
-\chapter{Nirtzah: Conclusion}
+\chapter*{Nirtzah: Conclusion}
 
 \vfill
 
@@ -2134,10 +2194,12 @@ He fathers-forth whose beauty is past change: \\
   לְשָׁנָה הַבָּאָה בִּירוּשַָׁלָיִם!
   \vspace{-1em}
 \end{HgHebrew}
+
 \begin{HgTranslit}
   \HgHL{L'shanah haba'ah b'yerushalayim!}
-  \vspace{-2em}
+  \vspace{-3em}
 \end{HgTranslit}
+
 \begin{HgEnglish}
   \HgHL{Next year in Jerusalem!}
 \end{HgEnglish}
