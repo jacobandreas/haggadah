@@ -1,3 +1,9 @@
+% TODO:
+
+% dyenu text w/ better translit for ``hotzianu, natan et hatorah, natan et % hashabat''
+% add ``oseh shalom'' and ``hashem oz l'amo yitein'' to birkat
+% nirtzah songsheet
+
 \documentclass[a4paper,10pt,openany]{memoir}
 
 \usepackage{xltxtra}
@@ -14,10 +20,13 @@
 \usepackage{setspace}
 \usepackage{multicol}
 
+%\chapterfont{\raggedleft}
+\renewcommand*{\chaptitlefont}{\huge\raggedleft}
+
 \usepackage{polyglossia}
 \setdefaultlanguage{english}
 \setotherlanguage[numerals=hebrew]{hebrew}
-\newfontfamily\hebrewfont[Script=Hebrew]{Shofar}
+\newfontfamily\hebrewfont[Script=Hebrew]{Adobe Hebrew}
 
 \setlength{\beforechapskip}{0cm}
 %\setlength{\beforechapskip}{-6.5em}
@@ -34,7 +43,9 @@
 
       \vspace{.15em}
 
+      \begin{flushleft}
       \noindent\Huge #1
+      \end{flushleft}
 
       \vspace{1em}
     \end{Spacing}
@@ -52,7 +63,7 @@
 
 \newenvironment{HgEnglish}{\strut\\\noindent}{\vspace{1em}}
 \newenvironment{HgTranslit}{\strut\\\noindent\begin{itshape}}{\end{itshape}\vspace{1em}}
-\newenvironment{HgHebrew}{\begin{hebrew}\strut\\\noindent\Large}{\end{hebrew}}
+\newenvironment{HgHebrew}{\begin{hebrew}\strut\\\noindent\LARGE}{\end{hebrew}}
 %\newenvironment{HgHebrew}{\begin{otherlanguage}{hebrew}\strut\\\noindent\Large
 %}{\par\end{otherlanguage}\vspace{1em}}
 
@@ -71,13 +82,32 @@
 \vfill
 
 \begin{center}
-\fontsize{22pt}{22pt}
-%\fontsize{26pt}{26pt}
+
+\begin{HgHebrew}
+\fontsize{120pt}{120pt}
+\selectfont
+\hspace{-10pt}
+ה
+\hfill 
+ג 
+\hfill
+ד 
+\hfill
+ה
+\end{HgHebrew}
+\vspace{5em}
+
+%\fontsize{22pt}{22pt}
+\fontsize{28pt}{28pt}
 \selectfont
 The 
-Columbia
-Commune
-Churchill
+Columbia-%
+Commune-%
+\\[.2em]
+\fontsize{37pt}{37pt}
+\selectfont
+Churchill-%
+California
 \\
 \fontsize{50pt}{50pt}
 \selectfont
@@ -175,7 +205,7 @@ Haggadah
 %\vspace{-3em}
 \begin{HgTranslit}
   \begin{center}
-  {\small 
+  {\footnotesize 
     KADESH - UR\d{H}ATZ - KARPAS - YA\d{H}ATZ - % \\
     MAGID - RA\d{H}TZA - MOTZI - MATZAH \\ 
     MAROR - KOREI\d{H} - SHUL\d{H}AN OREI\d{H} - % \\
@@ -351,27 +381,78 @@ We wash our hands to prepare ourselves for the Passover rituals.\CSrc
 
 \HgFill
 
-\begin{verse}
-Isn’t it always the heart that wants to wash \\
-the elephant, begging the body to do it \\
-with soap and water, a ladder, hands, \\
-in tree shade big enough for the vast savannas \\
-of your sadness, the strangler fig of your guilt, \\
-the cratered full moon’s light fuelling \\
-the windy spooling memory of elephant?
- 
-What if Father Quinn had said, “Of course you’ll recognize \\
-your parents in Heaven,” instead of \\
-“Being one with God will make your mother and father \\
-pointless.” That was back when I was young enough \\
-to love them absolutely though still fear for their place \\
-in Heaven, imagining their souls like sponges full \\
-of something resembling street water after rain.
-
-\HgEllipsis
+\settowidth{\versewidth}{\vin Who shall ascend into the mountain of HaShem?}
+\begin{verse}[\versewidth]
+  The earth is HaShem's, and the fulness thereof; \\
+  \vin the world, and they that dwell therein. \\
+  For he hath founded it upon the seas, \\
+  \vin and established it upon the floods. \\
+  Who shall ascend into the mountain of HaShem? \\
+  \vin and who shall stand in his holy place? \\
+  He that hath clean hands, and a pure heart \\
 \end{verse}
-\HgSource{Barbara Ras, ``Washing the Elephant''}
-\vfill
+\HgSource{Psalm XXIV:1--5 \JSrc}
+% JPS
+
+\HgFill
+
+\settowidth{\versewidth}{Would gush, flush, green these mountains and these
+valleys}
+\begin{verse}[\versewidth]
+  \HgEllipsis
+
+  It is our sorrow. Shall it melt? Ah, water \\
+  Would gush, flush, green these mountains and these valleys, \\
+  And we rebuild our cities, not dream of islands.
+\end{verse}
+
+\HgSource{W.~H.~Auden, [Hearing of harvests rotting in the valleys]}
+
+\HgFill
+
+\begin{HgEnglish}
+  My soul melteth away for heaviness; sustain me according unto Thy word.
+\end{HgEnglish}
+
+  \HgSource{Psalm CIX:28 \SSrc}
+  % JPS
+
+\HgFill
+
+\settowidth{\versewidth}{\vin that the bones which Thou hast crushed may
+rejoice}
+\begin{verse}[\versewidth]
+  Wash me thoroughly from mine iniquity, \\
+  \vin and cleanse me from my sin. \HgEllipsis \\
+  Purge me with hyssop, and I shall be clean; \\
+  \vin wash me, and I shall be whiter than snow. \\
+  Make me to hear joy and gladness; \\
+  \vin that the bones which Thou hast crushed may rejoice.
+\end{verse}
+\HgSource{Psalm LI:4,9--10 \SSrc}
+% JPS
+
+%\begin{verse}
+%Isn’t it always the heart that wants to wash \\
+%the elephant, begging the body to do it \\
+%with soap and water, a ladder, hands, \\
+%in tree shade big enough for the vast savannas \\
+%of your sadness, the strangler fig of your guilt, \\
+%the cratered full moon’s light fuelling \\
+%the windy spooling memory of elephant?
+% 
+%What if Father Quinn had said, “Of course you’ll recognize \\
+%your parents in Heaven,” instead of \\
+%“Being one with God will make your mother and father \\
+%pointless.” That was back when I was young enough \\
+%to love them absolutely though still fear for their place \\
+%in Heaven, imagining their souls like sponges full \\
+%of something resembling street water after rain.
+%
+%\HgEllipsis
+%\end{verse}
+%\HgSource{Barbara Ras, ``Washing the Elephant''}
+%\vfill
 
 \chapter*{Karpas: The green vegetable}
 
@@ -463,7 +544,7 @@ water represents the tears we shed when we were slaves in Egypt.
 \vfill
 
 \HgInst{Break the middle matzah, and set aside the larger piece as the
-afikoman. Hold the remaining matzah up, and read:}
+afikoman. Hold the remaining matzah up, and read (in Aramaic and English):}
 
 \begin{HgHebrew}
   הָא לַחְמָא עַנְיָא דִּי אֲכָלוּ אַבְהָתָנָא
@@ -678,7 +759,7 @@ world, while ``All the days of your life'' includes the time of the Messiah.
 
   \item
     Why do we swallow the bitter herbs of ethnocentrism, ultranationalism, and
-    pharaoic fundamentalism [?]
+    pharaoic fundamentalism. % [?]
 
   \item
     Why do we recline, most nights of the year, when our freedom remains
@@ -718,7 +799,7 @@ judgments that God our god has commanded you?''
 
 To that one, you explain all the laws of Passover, down to the very last detail
 about the Afikoman. \\[1em]
-The wicked child asks: ``What does all of this mean to you?'' (Exodus 12:26)
+The wicked child asks: ``What does all of this mean to you?'' %(Exodus 12:26)
 
 By saying ``you,'' and not ``we'' or ``me,'' he excludes himself from the group,
 and denies God. Answer that child plainly: ``This is done because of what the
@@ -758,7 +839,7 @@ finally the one who does not know how to ask
   testimonies\ldots{}that God our god has commanded to you”?
 
   The wicked child makes no mention of God; the wise child refers to “God our
-  God,” clearly including himself. He uses “you” in the sense of “you who came
+  god,” clearly including himself. He uses “you” in the sense of “you who came
   out of Egypt and received God’s commandments,” as opposed to himself who was
   not yet born when the commandment was given.
 
@@ -797,129 +878,257 @@ finally the one who does not know how to ask
 
 \chapter*{Magid: The Passover story \\ {\LARGE Exile, Bondage and Deliverance}}
 
-\vfill
+%\HgInst{If many people present don't know the full Passover story, consider
+%reading the facing page instead.}
 
-\HgInst{If many people present don't know the full Passover story, consider
-reading the facing page instead.}
-
+\vspace{-2em}
 \begin{HgEnglish}
-Go and hear what Laban the Aramaean wanted to do to our father Jacob. Pharaoh
+Go and learn what Laban the Aramaean wanted to do to our father Jacob. Pharaoh
 had issued a decree against the male children only, but Laban wanted to uproot
 everyone. As it is said: 
+\end{HgEnglish}
+
+\noindent
 \HgHL{%
   ``A wandering Aramean was my father, and he went
   down into Egypt, and sojourned there, few in number; and he became there a
-  nation, great, mighty, and populous. And the Egyptians dealt ill with us, and
-  afflicted us, and laid upon us hard bondage.  And we cried unto the Lord, the
-  God of our fathers, and he heard our voice, and saw our affliction, and our
-toil, and our oppression. And God brought us forth out of Egypt with a mighty
-hand, and with an outstretched arm, and with great terribleness, and with signs,
-and with wonders.
+  nation, great, mighty, and populous.
+  \HgSource{Deuteronomy 26:5}
 }
-\end{HgEnglish}
-\vspace{-2em}
+
+\vspace{-.5em}
+{
+  \small
+  \noindent
+  {\itshape And he went down to Egypt} forced by Divine decree.\\[1em]
+  {\itshape And sojurned there} not to settle, but only to live there temporarily.
+  Thus it is said ``They said to the Pharaoh, we have come to sojurn in the
+  land, for there is no pasture for your servants flocks' because the hunger is
+  severe in the land of Canaan; and now, please, let your servants dwell in the
+  land of Goshen.''\\[1em]
+  {\itshape Few in number,} as it is said: ``Your fathers went down to Egypt with
+  seventy persons, and now the Lord, your God, has made you numerous as the
+  stars of heaven.''\\[1em]
+  {\itshape And he became there a nation} set apart from the Egyptians.\\[1em]
+  {\itshape Great, mighty,} as it is said: ``And the children of Israel were fruitful and
+  increased abundantly, and multiplied and became very, very mighty, and the land
+  became filled with them.''\\[1em]
+  {\itshape And populous,} as it is said: ``I passed over you and saw you wallowing in
+  your bloods, and I said to you `By your blood you shall live,' and I said to you
+  `By your blood you shall live!' I caused you to thrive like the plants of the
+  field, and you increased and grew and became very beautiful, your bosom
+  fashioned and your hair grown long, but you were naked and bare.''\\[1em]
+}
+
+\noindent
+\HgHL{%
+  And the Egyptians dealt ill with us, and
+  afflicted us, and laid upon us hard bondage. 
+  \HgSource{Deuteronomy 26:6}
+}
+
+{\small
+\noindent
+{\itshape And the Egyptians dealt ill with us,} as it is said: ``Come, let us act
+cunningly with [the people] lest they multiply and, if there should be a war
+against us, they will join our enemies, fight against us and leave the
+land.''\\[1em]
+{\itshape And afflicted us,} as it is said: ``They set taskmasters over [the people of
+Israel] to make them suffer with their burdens, and they built storage cities
+for Pharaoh, Pitom and Ramses.''\\[1em]
+{\itshape And laid upon us hard bondage,} as it is said: ``The Egyptians made the
+children of Israel work with rigor. And they made their lives bitter with hard
+work, with mortar and with bricks and all manner of service in the field, all
+their work which they made them work with rigor.''
+}
+
+\pagebreak
+
+\noindent
+\HgHL{%
+  And we cried unto the Lord, the
+  God of our fathers, and he heard our voice, and saw our affliction, and our
+  toil, and our oppression.
+  \HgSource{D.\ 26:7}
+}
+
+\vspace{-1em}
+{\small
+\noindent
+{\itshape And we cried unto the Lord, the God of our fathers,}
+as it is said: ``During that long period, the king of Egypt died; and the
+children of Israel groaned because of the servitude, and they cried out. And
+their cry for help from their servitude rose up to God.''\\[1em]
+{\itshape And he heard our voice,} as it is said: ``And God heard their
+groaning, and God remembered his covenant with Abraham, Isaac and
+Jacob.'' \\[1em]
+{\itshape And saw our afflication,} which refers to the separation of husband
+and wife, as it is said: ``God saw the children of Israel and God took
+note.'' \\[1em]
+{\itshape And our toil,} which refers to the children, as it is said: ``Every
+boy that is born, you shall throw into the river and every girl you shall keep
+alive.'' \\[1em]
+{\itshape And our oppression,} which refers to the pressure, as it is said: ``I
+have seen the oppression with which the Egyptians oppress them.'' \\[1em]
+}
+
+\vspace{-.6em}
+\noindent
+\HgHL{%
+  And God brought us forth out of Egypt with a mighty hand, and with an
+  outstretched arm, and with great terribleness, and with signs, and with
+  wonders.
+  \HgSource{Deuteronomy 26:8}
+}
+
+
+\vspace{-1em}
+{\small
+\noindent
+{\itshape And God brought us forth out of Egypt,} not through an angel, not through a seraph
+and not through a messenger. The Holy One, blessed be He, did it in His glory by
+Himself! Thus it is said: ``In that night I will pass through the land of Egypt, and I
+will smite every first-born in the land of Egypt, from man to beast, and I will
+carry out judgments against all the gods of Egypt, I the Lord.''\\[.5em]
+  \phantom{MM} {\itshape I will pass through the land of Egypt,} I and not an
+  angel;\\[.4em]
+  \phantom{MM} {\itshape And I will smite every first-born in the land of Egypt,} I and not
+  a seraph;\\[.4em]
+  \phantom{MM} {\itshape And I will carry out judgments against all the gods of Egypt,} I and not a
+  messenger;\\[.4em]
+  \phantom{MM} {\itshape I, the Lord,} it is I, and none other!\\[1em]
+{\itshape With a mighty hand,} this refers to the pestilence, as it is said:
+``Behold, the hand of the Lord will be upon your livestock in the field, upon
+the horses, the donkeys, the camels, the herds and the flocks, a very severe
+pestilence.'' \\[1em]
+{\itshape And with an outstretched arm,} which refers to the sword, as it is said: ``His
+sword was drawn, in his hand, stretched out over Jerusalem.'' \\[1em]
+{\itshape And with a great terribleness,} which refers to the revelation of the Divine
+Presence, as it is said: ``Has any God ever tried to take for himself a nation
+from the midst of another nation, with trials, signs and wonders, with war and
+with a strong hand and an outstretched arm, and with great manifestations, like
+all that the Lord your God, did for you in Egypt before your eyes!'' \\[1em]
+{\itshape And with signs,} which refers to the staff, as it is said: ``Take into your
+hand this staff with which you shall perform the signs.'' \\[1em]
+{\itshape And with wonders,} which refers to the blood, as it is said: ``And I
+shall show wonders in heaven and on earth.}
 
 %\HgFill
 
-\begin{HgEnglish}
-  %\small
-\noindent
-``and he went down into Egypt'' forced by divine decree.\\
-
-\noindent
-``and sojourned there'' not to settle, but only to live there temporarily, as
-it is said: ``They said to Pharaoh, We have come to sojourn in the land, for
-there is no pasture for your servants' flocks because the hunger is severe in
-the land of Canaan; and now, please, let your servants dwell in the land of
-Goshen.''
-%\\ 
+%\begin{HgEnglish}
+%  %\small
 %\noindent
-\HgEllipsis \\
+%``and he went down into Egypt'' forced by divine decree.\\
+%
+%\noindent
+%``and sojourned there'' not to settle, but only to live there temporarily, as
+%it is said: ``They said to Pharaoh, We have come to sojourn in the land, for
+%there is no pasture for your servants' flocks because the hunger is severe in
+%the land of Canaan; and now, please, let your servants dwell in the land of
+%Goshen.''
+%%\\ 
+%%\noindent
+%%\HgEllipsis \\
+%
+%\noindent
+%``few in number'' as it is said: ``Your fathers went down to Egypt with seventy
+%persons, and now, the Lord, your God, has made you as numerous as the stars of
+%heaven.''\\
 
-% \noindent
-% ``few in number'' as it is said: ``Your fathers went down to Egypt with seventy
-% persons, and now, the Lord, your God, has made you as numerous as the stars of
-% heaven.''\\
-% 
-% \noindent
-% ``and he became there a nation'' set apart from the Egyptians.\\
-
-\noindent
-``great, mighty,'' as it is said: ``And the children of Israel were fruitful and
-increased abundantly, and multiplied and became very, very mighty, and the land
-became filled with them.''\\
-
-\noindent
-``and populous'' as it is said: ``I passed over you and saw you wallowing in
-your bloods, and I said to you `By your blood you shall live,' and I said to you
-`By your blood you shall live!' I caused you to thrive like the plants of the
-field, and you increased and grew and became very beautiful, your bosom
-fashioned and your hair grown long, but you were naked and bare.''\LSrc
 
 %\noindent\HgEllipsis
 
 %\noindent
-%``And the Egyptians dealt ill with us,'' as it is said: ``Come, let us act
-%cunningly with [the people] lest they multiply and, if there should be a war
-%against us, they will join our enemies, fight against us and leave the land.''\\
-%
-%``and afflicted us,'' as it is said: ``They set taskmasters over [the people of
-%Israel] to make them suffer with their burdens, and they built storage cities
-%for Pharaoh, Pitom and Ramses.''\\
-%
-%\noindent
-%``and laid upon us hard bondage,'' as it is said: ``The Egyptians made the
-%children of Israel work with rigor. And they made their lives bitter with hard
-%work, with mortar and with bricks and all manner of service in the field, all
-%their work which they made them work with rigor.'' \\[2em]
-%
 %\noindent
 %``And God brought us forth out of Egypt,'' not through an angel, not through a
 %seraph and not through a messenger. The Holy One, blessed be He, did it in His
 %glory by Himself! \HgEllipsis \\
 %
 %\noindent
-%``With a mighty hand,'' this refers to the pestilence, as it is said:
-%``Behold, the hand of the Lord will be upon your livestock in the field, upon
-%the horses, the donkeys, the camels, the herds and the flocks, a very severe
-%pestilence.'' \\
-%
-%\noindent
-%``and with an outstretched arm,'' this refers to the sword, as it is said: ``His
-%sword was drawn, in his hand, stretched out over Jerusalem.'' \\
-%
-%\noindent
-%``and with a great terribleness,'' this refers to the revelation of the Divine
-%Presence, as it is said: ``Has any God ever tried to take for himself a nation
-%from the midst of another nation, with trials, signs and wonders, with war and
-%with a strong hand and an outstretched arm, and with great manifestations, like
-%all that the Lord your God, did for you in Egypt before your eyes!'' \\
-%
-%\noindent
-%``and with signs,'' this refers to the staff, as it is said: ``Take into your
-%hand this staff with which you shall perform the signs.'' \\
-%
-%\noindent
-%``and with wonders,'' this refers to the blood, as it is said: ``And I shall
-%show wonders in heaven and on earth.
 
+%\end{HgEnglish}
+
+\chapter*{Magid: The Passover story \\ {\LARGE Exile, Bondage and Deliverance}}
+
+\begin{HgEnglish}
+You find that when the Israelites suffered hard labor in Egypt that Pharaoh
+decreed that they should not sleep at home or have sexual relations with their
+wives. Rabbi Shimon ben Halafta said: What did the Israelite women do? 
+They would 
+%go down to draw water from the river, whereupon the Holy One prepared
+%small fish for them inside their pitchers. 
+%They would sell some of them, cook
+%some of them and buy with them wine and 
+go out into the work fields to feed their husbands. 
+ 
+After they had eaten, they took their mirrors and looked into them together with
+their husbands.  The wife would say: I am better looking than you. The husband
+would say: I am better looking! And in this way they aroused their sexual desire
+and became fruitful and multiplied, as it is said ``And the children of Israel
+were fruitful and swarmed and multiplied and became exceedingly mighty'' (Exodus
+1:7). [\ldots]
+ 
+%It was through the merits of these mirrors that the Israelites were able to
+%continue to have children even under the demands of harsh labor. 
+
+As soon as the Holy One told Moses to make the tabernacle, 
+%all of the men came
+%to contribute. Some brought silver, some brought gold or brass, onyx and other
+%gems to be set. They readily brought everything. Whereupon 
+[\ldots]
+the women said,
+``What have we to contribute to the offerings for the tabernacle?'' They came and
+brought the mirrors and presented them to Moses.  When Moses saw the mirrors, he
+was furious with them. 
+[\ldots]
+%He said: “Go and punish whoever brought these mirrors!
+%What possible use could they have here?!” 
+The Holy One said: ``Moses! You look down on these, but it was these mirrors that
+raised up all of the hosts of children born in Egypt. Take them and make from
+them the washbasin and its base for the priests\ldots.''
+
+
+\HgSource{Midrash Tanhuma, Pekudei 9}
 \end{HgEnglish}
 
 \HgFill
 
+
 \begin{HgEnglish}
-  \small
-  I will sing unto God, for he has triumphed greatly. \hfill Horse \\
-  and rider he has cast into the sea. \hfill God is my strength and song, and he shall be \\
-  my deliverance. \hfill This is my God, and I will glorify him; \hfill the God \\
-  of my father, and I will exalt him. \hfill God is a man of war; God \\
+  I will sing unto God, for he has triumphed greatly. \hfill Horse \\[.5em]
+  and rider he has cast into the sea. \hfill God is my strength and song, and he
+  shall be \\[.5em]
+  my deliverance. \hfill This is my God, and I will glorify him; \hfill the God
+  \\[.5em]
+  of my father, and I will exalt him. \hfill God is a man of war; God \\[.5em]
   is his name. \hfill He has thrown Pharaoh's chariots and host into the sea,
-  \hfill and sunk \\
+  \hfill and sunk \\[.5em]
   his favorite captains in the Sea of Reeds.
 
 \HgSource{Deuteronomy 15:1-4}
 \end{HgEnglish}
 
+\HgFill
+
+\begin{HgEnglish}
+   In the hands of a master, the potentially pedestrian footnote is elevated to
+   a rhapsodic grace note. It can inform and entertain, clarify and illuminate.
+   The artful practitioner ``knows how to instruct and to amuse,'' writes
+   Princeton history professor G.W. Bowersock in The American Scholar, ``to
+   unite {\itshape utile} with {\itshape dulci} in accordance with the unrivaled
+   precept of Horace two thousand years ago.''
+
+   Footnotes allow us not only to see the prejudices of old sources, but the
+   biases and convictions of the footnoter himself. They provide readers with the
+   intellectual map that the writer has used to arrive at her conclusions. If
+   some see footnotes as tiresome road blocks, others more fairly view them as
+   serendipitous detours that can lead to delightful and unexpected stops not on
+   the original itinerary.
+
+   \HgSource{Bruce Anderson, ``The decline and fall of footnotes''}
+\end{HgEnglish}
+
+\vfill
 
 \hchapter{מגיד}
 
@@ -1022,7 +1231,7 @@ fashioned and your hair grown long, but you were naked and bare.''\LSrc
   and killed each family's first-born son while he slept. 
   But the Angel passed over the houses that were marked with blood.
 
-  In the night the the Pharaoh awoke
+  In the night the Pharaoh awoke
   and saw that his son was dead. 
   He said to Moses and Aaron,
   ``Rise up and go, leave as you have promised,
@@ -1030,7 +1239,7 @@ fashioned and your hair grown long, but you were naked and bare.''\LSrc
   So the Israelites left in haste,
   carrying Egyptian gold
   and bread that had not yet risen.
-  But soon the the Pharaoh changed his mind, 
+  But soon the Pharaoh changed his mind, 
   and he chased after them with horses and chariots.
 
   The Israelites came to the shore of the Sea of Reeds, 
@@ -1185,10 +1394,10 @@ read each plague. Don't lick your finger!}
 %\end{HgTranslit}
 
 \noindent
-\begin{minipage}{.32\textwidth}
+\begin{minipage}{.33\textwidth}
   \begin{HgTranslit}
   \small
-  Ilu hotzianu mimitzrayim\ldots \\
+  {$\hspace{-1em}\rightarrow$ Ilu hotzianu mimitzrayim\ldots }\\
   Ilu asa bahem sh'fatim \\
   Ilu asa veloheihem \\
   Ilu harag et b'\d{h}oreihem \\
@@ -1199,9 +1408,9 @@ read each plague. Don't lick your finger!}
   Ilu sifek tzarkeienu \\
   ~b'midbar arbaim shana \\
   Ilu he'e\d{h}ilanu et haman \\
-  Ilu natan lanu et hashabat \\
+  {$\rightarrow$ Ilu natan lanu et hashabat} \\
   Ilu karvanu lifnei har sinai \\
-  Ilu natan lanu et hatora \\
+  {$\rightarrow$ Ilu natan lanu et hatora} \\
   Ilu hi\d{h}inisanu l'eretz yisrael \\
   ~v'lo vana lanu et beit hab'\d{h}ira\ldots
 \end{HgTranslit}
@@ -1369,7 +1578,7 @@ matzah, and the maror.}
 \begin{HgEnglish}
   \HgHL{In every generation, let each one say that he himself came out of
   Egypt.} As it is said: ``You shall tell your child on that day, `it is because
-  of what God did for me when I left Egypt.''\\
+  of what God did for me when I left Egypt.'{''}\\
 \end{HgEnglish}
 
 \HgInst{Finally, hold up the wine, and read:}
@@ -1500,62 +1709,54 @@ matzah, and the maror.}
 \hchapter{רחצה}
 
 \begin{HgEnglish}
-It is customary to refrain from conversation from now until the blessing over
-the Matzah, so that they can be spoken as a single blessing.
+It is customary to refrain from conversation between this blessing and the
+blessing over the Matzah, so that the two can be spoken as a single blessing.
 \end{HgEnglish}
-
-\HgFill
-
-\settowidth{\versewidth}{\vin Who shall ascend into the mountain of HaShem?}
-\begin{verse}[\versewidth]
-  The earth is HaShem's, and the fulness thereof; \\
-  \vin the world, and they that dwell therein. \\
-  For he hath founded it upon the seas, \\
-  \vin and established it upon the floods. \\
-  Who shall ascend into the mountain of HaShem? \\
-  \vin and who shall stand in his holy place? \\
-  He that hath clean hands, and a pure heart \\
-\end{verse}
-\HgSource{Psalm XXIV:1--5 \JSrc}
-% JPS
-
-\HgFill
-
-\settowidth{\versewidth}{Would gush, flush, green these mountains and these
-valleys}
-\begin{verse}[\versewidth]
-  \HgEllipsis
-
-  It is our sorrow. Shall it melt? Ah, water \\
-  Would gush, flush, green these mountains and these valleys, \\
-  And we rebuild our cities, not dream of islands.
-\end{verse}
-
-\HgSource{W.~H.~Auden, [Hearing of harvests rotting in the valleys]}
 
 \HgFill
 
 \begin{HgEnglish}
-  My soul melteth away for heaviness; sustain me according unto Thy word.
-
-  \HgSource{Psalm CIX:28 \SSrc}
-  % JPS
+  \settowidth{\versewidth}{From the wellsprings of redemption}
+  \begin{verse}[\versewidth]
+    And you shall draw water in joy \\
+    From the wellsprings of redemption
+  \end{verse}
+  \HgSource{Isaiah 12:3 (traditional Israeli folk song)}
 \end{HgEnglish}
 
 \HgFill
 
-\settowidth{\versewidth}{\vin that the bones which Thou hast crushed may
-rejoice}
-\begin{verse}[\versewidth]
-  Wash me thoroughly from mine iniquity, \\
-  \vin and cleanse me from my sin. \HgEllipsis \\
-  Purge me with hyssop, and I shall be clean; \\
-  \vin wash me, and I shall be whiter than snow. \\
-  Make me to hear joy and gladness; \\
-  \vin that the bones which Thou hast crushed may rejoice.
-\end{verse}
-\HgSource{Psalm LI:4,9--10 \SSrc}
-% JPS
+\begin{HgEnglish}
+  Their heart cried out to the Lord: ``O wall of the daughter of Zion! Let tears
+  stream down like a torrent day and night, give yourself no respite, let the
+  pupil of your eye not rest!\\
+
+  \noindent Arise, cry out in the night, at the beginning of the watches! Pour out your
+  heart like water before the presence of the Lord; lift up your hands to Him
+  for the lives of your infants, who faint because of hunger at the
+  head of every street.''
+\end{HgEnglish}
+
+\HgSource{Lamentations 2:18--19 \LSrc}
+
+\HgFill
+
+\begin{HgEnglish}
+  Behold, I send My messenger, and he shall clear the way before Me; and the
+  Lord, whom ye seek, will suddenly come to His temple, and the messenger of the
+  covenant, whom ye delight in, behold, he cometh, saith the Lord of Hosts.\\
+
+  \noindent
+  But who may abide the day of his coming? And who shall stand when he
+  appeareth? For he is like a refiner's fire, and like fullers' soap;\\
+  
+  \noindent
+  And he shall sit as a refiner and purifier of silver; and he shall purify the
+  sons of Levi, and purge them as gold and silver; and there shall be they that
+  shall offer unto the Lord offerings in righteousness.
+\end{HgEnglish}
+
+\HgSource{Malachi 3:1--3 \JSrc}
 
 \chapter*{Motzi: Blessing the bread \\ Matzah: Blessing the matzah}
 
@@ -1687,7 +1888,7 @@ the table. Continuing to hold only those pieces, read:}
 \begin{HgTranslit}
   Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam, \\
   asher kidshanu b'mitzvotav, \\
-  v'tzivanu al a\d{h}ilat matzah.
+  v'tzivanu al a\d{h}ilat maror.
 \end{HgTranslit}
 
 \begin{HgEnglish}
@@ -1756,7 +1957,7 @@ resistance and the possibility of liberation for all.
   The overall goal will be realized only with the knowledge and recognition that
   these two forces are not contradictory, but are joined in creating the world’s
   ultimate Freedom, the honor and the powerful desirability of which is not
-  revealed unless it is crowned by exalted Servitude, servitude before the King
+  revealed unless it is \linebreak crowned by exalted Servitude, servitude before the King
   of Glory, which is also the ultimate freedom.
 
   Therefore, the perfect form of Freedom comes when it is bound together with
@@ -1773,8 +1974,9 @@ resistance and the possibility of liberation for all.
 \begin{center}
   \fontsize{50pt}{50pt}
   \selectfont
-  The
-  meal
+  %The
+  %meal
+  is served.
 \end{center}
 \vfill
 
@@ -1783,8 +1985,9 @@ resistance and the possibility of liberation for all.
 \begin{center}
   \fontsize{50pt}{50pt}
   \selectfont
-  is 
-  served.
+  %is 
+  %served.
+  The meal
 \end{center}
 \vfill
 
@@ -1807,11 +2010,12 @@ group.  This should be the last thing you eat tonight.}
 In most families, it is customary to hide the matzah during {\bfseries
 ya\d{h}atz}. At this point in the evening the children search for the matzah,
 and a prize is awarded to the one who finds it.
-
-Traditionally, it's even less straightforward. The seder cannot proceed until
+%
+%Traditionally, it's even less straightforward. 
+How did this tradition originate? The seder cannot proceed until
 the afikoman has been eaten, and so the child who holds it finds herself with an
-excelleng bargaining token. Rather than simply being given a prize, she uses the
-matzah to extort a gift of her choosing from the adults.
+excellent bargaining token. She uses the matzah to extort a gift of her choosing
+from the adults.
 \end{HgEnglish}
 
 \HgFill
